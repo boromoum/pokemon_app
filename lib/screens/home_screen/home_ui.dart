@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pokemon_app/bloc/locale/bloc.dart';
 import 'package:pokemon_app/bloc/pokemons/bloc.dart';
 import 'package:pokemon_app/bloc/pokemons/states.dart';
+import 'package:pokemon_app/localization/app_localizations.dart';
 import 'package:pokemon_app/models/pokemon.dart';
 import 'package:pokemon_app/screens/detail_screen/detail_screen.dart';
 import 'package:pokemon_app/widgets/error.dart';
@@ -52,17 +54,27 @@ class HomeUI extends StatelessWidget {
                                         ? EdgeInsets.only(left: 10)
                                         : EdgeInsets.all(20),
                                     child: Text(
-                                      "Pokemons",
+                                      AppLocalizations.of(context)!
+                                          .translate("pokemons"),
                                       style: TextStyle(color: Colors.black),
                                     ),
                                   ),
                                 ],
                               ),
-                              SafeArea(
-                                child: Image.asset(
-                                  'assets/images/pokemon.jpeg',
-                                  height: 50,
-                                  width: 50,
+                              Padding(
+                                padding: const EdgeInsets.only(top: 30.0),
+                                child: IconButton(
+                                  icon: Icon(Icons.translate),
+                                  onPressed: () {
+                                    if (AppLocalizations.of(context)!
+                                        .isEnLocale) {
+                                      BlocProvider.of<LocaleBloc>(context)
+                                          .toKhmer();
+                                    } else {
+                                      BlocProvider.of<LocaleBloc>(context)
+                                          .toEnglish();
+                                    }
+                                  },
                                 ),
                               ),
                             ]),

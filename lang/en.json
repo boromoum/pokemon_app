@@ -1,0 +1,15 @@
+{
+    "pokemons": "Pokemons",
+    "about": "About",
+    "base_stats": "Base Stats",
+    "attack": "Attack",
+    "defense": "Defense",
+    "special_attack": "Special Attack",
+    "special_defense": "Special Defense",
+    "height": "Height",
+    "weight": "Weight",
+    "training": "Training",
+    "breeding": "Breading",
+    "gender": "Gender",
+    "hp": "HP"
+}

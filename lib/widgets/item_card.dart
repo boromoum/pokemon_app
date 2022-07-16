@@ -32,7 +32,7 @@ class _ItemCardState extends State<ItemCard> {
     } else {
       setState(() {
         bgColor = PaletteColor(Colors.black, 3);
-        textColor = Colors.black;
+        textColor = Colors.white;
       });
     }
   }

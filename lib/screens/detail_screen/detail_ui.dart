@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:getwidget/getwidget.dart';
 import 'package:palette_generator/palette_generator.dart';
+import 'package:pokemon_app/localization/app_localizations.dart';
 import 'package:pokemon_app/models/pokemon.dart';
 
 class DetailUI extends StatelessWidget {
@@ -54,9 +56,12 @@ class DetailUI extends StatelessWidget {
                         bgColor != null ? bgColor!.color : Colors.black,
                     controller: tabController,
                     tabs: <Tab>[
-                      const Tab(text: "About"),
-                      const Tab(text: "Base Stats"),
-                      const Tab(text: "Evolutions"),
+                      Tab(
+                          text:
+                              AppLocalizations.of(context)!.translate("about")),
+                      Tab(
+                          text: AppLocalizations.of(context)!
+                              .translate("base_stats")),
                     ],
                   ),
                   Expanded(
@@ -85,7 +90,8 @@ class DetailUI extends StatelessWidget {
                               ]),
                               SizedBox(height: 10),
                               Text(
-                                'About',
+                                AppLocalizations.of(context)!
+                                    .translate("about"),
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     fontSize: 22,
@@ -101,7 +107,8 @@ class DetailUI extends StatelessWidget {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        'Height',
+                                        AppLocalizations.of(context)!
+                                            .translate("height"),
                                         style: TextStyle(
                                             fontWeight: FontWeight.bold,
                                             fontSize: 22,
@@ -119,7 +126,8 @@ class DetailUI extends StatelessWidget {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        'Weight',
+                                        AppLocalizations.of(context)!
+                                            .translate("weight"),
                                         style: TextStyle(
                                             fontWeight: FontWeight.bold,
                                             fontSize: 22,
@@ -134,7 +142,8 @@ class DetailUI extends StatelessWidget {
                               ]),
                               SizedBox(height: 10),
                               Text(
-                                'Breeding',
+                                AppLocalizations.of(context)!
+                                    .translate("breeding"),
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     fontSize: 22,
@@ -143,7 +152,8 @@ class DetailUI extends StatelessWidget {
                               SizedBox(height: 10),
                               Row(children: [
                                 Text(
-                                  'Gender',
+                                  AppLocalizations.of(context)!
+                                      .translate("gender"),
                                   style: TextStyle(
                                       fontSize: 16, color: Colors.grey),
                                 ),
@@ -172,7 +182,8 @@ class DetailUI extends StatelessWidget {
                               ]),
                               SizedBox(height: 10),
                               Text(
-                                'Training',
+                                AppLocalizations.of(context)!
+                                    .translate("training"),
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     fontSize: 22,
@@ -194,8 +205,109 @@ class DetailUI extends StatelessWidget {
                             ],
                           ),
                         ),
-                        Container(color: Colors.transparent),
-                        Container(color: Colors.transparent),
+                        SingleChildScrollView(
+                          child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                SizedBox(height: 20),
+                                Text(
+                                  AppLocalizations.of(context)!.translate("hp"),
+                                  style: TextStyle(
+                                      fontSize: 16, color: Colors.grey),
+                                ),
+                                SizedBox(height: 10),
+                                GFProgressBar(
+                                  percentage: pokemon!.hp! / 100,
+                                  lineHeight: 20,
+                                  backgroundColor: Colors.grey,
+                                  progressBarColor: bgColor != null
+                                      ? bgColor!.color
+                                      : Colors.black,
+                                  trailing: Container(
+                                      margin: EdgeInsets.only(left: 5),
+                                      child: Text(pokemon!.hp!.toString())),
+                                ),
+                                SizedBox(height: 10),
+                                Text(
+                                  AppLocalizations.of(context)!
+                                      .translate("attack"),
+                                  style: TextStyle(
+                                      fontSize: 16, color: Colors.grey),
+                                ),
+                                SizedBox(height: 10),
+                                GFProgressBar(
+                                  percentage: pokemon!.attack! / 100,
+                                  lineHeight: 20,
+                                  backgroundColor: Colors.grey,
+                                  progressBarColor: bgColor != null
+                                      ? bgColor!.color
+                                      : Colors.black,
+                                  trailing: Container(
+                                      margin: EdgeInsets.only(left: 5),
+                                      child: Text(pokemon!.attack!.toString())),
+                                ),
+                                SizedBox(height: 10),
+                                Text(
+                                  AppLocalizations.of(context)!
+                                      .translate("defense"),
+                                  style: TextStyle(
+                                      fontSize: 16, color: Colors.grey),
+                                ),
+                                SizedBox(height: 10),
+                                GFProgressBar(
+                                  percentage: pokemon!.defense! / 100,
+                                  lineHeight: 20,
+                                  backgroundColor: Colors.grey,
+                                  progressBarColor: bgColor != null
+                                      ? bgColor!.color
+                                      : Colors.black,
+                                  trailing: Container(
+                                      margin: EdgeInsets.only(left: 5),
+                                      child:
+                                          Text(pokemon!.defense!.toString())),
+                                ),
+                                SizedBox(height: 10),
+                                Text(
+                                  AppLocalizations.of(context)!
+                                      .translate("special_attack"),
+                                  style: TextStyle(
+                                      fontSize: 16, color: Colors.grey),
+                                ),
+                                SizedBox(height: 10),
+                                GFProgressBar(
+                                  percentage: pokemon!.specialAttack! / 100,
+                                  lineHeight: 20,
+                                  backgroundColor: Colors.grey,
+                                  progressBarColor: bgColor != null
+                                      ? bgColor!.color
+                                      : Colors.black,
+                                  trailing: Container(
+                                      margin: EdgeInsets.only(left: 5),
+                                      child: Text(
+                                          pokemon!.specialAttack!.toString())),
+                                ),
+                                SizedBox(height: 10),
+                                Text(
+                                  AppLocalizations.of(context)!
+                                      .translate("special_defense"),
+                                  style: TextStyle(
+                                      fontSize: 16, color: Colors.grey),
+                                ),
+                                SizedBox(height: 10),
+                                GFProgressBar(
+                                  percentage: pokemon!.specialDefense! / 100,
+                                  lineHeight: 20,
+                                  backgroundColor: Colors.grey,
+                                  progressBarColor: bgColor != null
+                                      ? bgColor!.color
+                                      : Colors.black,
+                                  trailing: Container(
+                                      margin: EdgeInsets.only(left: 5),
+                                      child: Text(
+                                          pokemon!.specialDefense!.toString())),
+                                )
+                              ]),
+                        ),
                       ],
                     ),
                   ),

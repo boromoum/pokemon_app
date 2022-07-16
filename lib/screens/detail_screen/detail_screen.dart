@@ -21,7 +21,7 @@ class _DetailScreenState extends State<DetailScreen>
   void initState() {
     super.initState();
     _updatePalette();
-    this._tabController = TabController(length: 3, vsync: this);
+    this._tabController = TabController(length: 2, vsync: this);
   }
 
   _updatePalette() async {
