@@ -1,5 +1,4 @@
 import 'package:equatable/equatable.dart';
-
 import 'package:pokemon_app/models/pokemon.dart';
 
 abstract class PokemonsState extends Equatable {

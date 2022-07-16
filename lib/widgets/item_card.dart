@@ -68,19 +68,19 @@ class _ItemCardState extends State<ItemCard> {
         child: Container(
           padding: EdgeInsets.all(10.0),
           child: Column(children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                IconButton(
-                  onPressed: () {},
-                  icon: Icon(
-                    Icons.favorite,
-                    color: Colors.white,
-                    size: 35,
-                  ),
-                ),
-              ],
-            ),
+            // Row(
+            //   mainAxisAlignment: MainAxisAlignment.end,
+            //   children: [
+            //     IconButton(
+            //       onPressed: () {},
+            //       icon: Icon(
+            //         Icons.favorite,
+            //         color: Colors.white,
+            //         size: 35,
+            //       ),
+            //     ),
+            //   ],
+            // ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,

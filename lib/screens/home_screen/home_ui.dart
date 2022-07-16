@@ -105,7 +105,7 @@ class HomeUI extends StatelessWidget {
                         crossAxisCount: 2,
                         mainAxisSpacing: 20,
                         crossAxisSpacing: 20,
-                        childAspectRatio: 0.9,
+                        childAspectRatio: 1.1,
                       ),
                       delegate: SliverChildBuilderDelegate(
                         (BuildContext context, int index) {
@@ -138,20 +138,20 @@ class HomeUI extends StatelessWidget {
               ),
             ],
           ),
-          Positioned(
-              bottom: 10,
-              right: 10,
-              child: RawMaterialButton(
-                onPressed: () {},
-                elevation: 2.0,
-                fillColor: Colors.white,
-                child: Icon(
-                  Icons.favorite_border_outlined,
-                  size: 35.0,
-                ),
-                padding: EdgeInsets.all(15.0),
-                shape: CircleBorder(),
-              ))
+          // Positioned(
+          //     bottom: 10,
+          //     right: 10,
+          //     child: RawMaterialButton(
+          //       onPressed: () {},
+          //       elevation: 2.0,
+          //       fillColor: Colors.white,
+          //       child: Icon(
+          //         Icons.favorite_border_outlined,
+          //         size: 35.0,
+          //       ),
+          //       padding: EdgeInsets.all(15.0),
+          //       shape: CircleBorder(),
+          //     ))
         ],
       ),
     );

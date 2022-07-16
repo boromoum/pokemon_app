@@ -44,32 +44,4 @@ class PokemonsBloc extends Bloc<PokemonEvents, PokemonsState> {
       );
     }
   }
-
-  // Stream<PokemonEvents> mapEventToState(PokemonEvents event) async* {
-  //   switch (event) {
-  //     case PokemonEvents.fetchPokemons:
-  //       PokemonsLoading();
-  //       try {
-  //         pokemons = await pokemonsRepo?.getPokemonList();
-  //         PokemonsLoaded(pokemons: pokemons);
-  //       } on SocketException {
-  //         PokemonsListError(
-  //           error: NoInternetException('No Internet'),
-  //         );
-  //       } on HttpException {
-  //         PokemonsListError(
-  //           error: NoServiceFoundException('No Service Found'),
-  //         );
-  //       } on FormatException {
-  //         PokemonsListError(
-  //           error: InvalidFormatException('Invalid Response format'),
-  //         );
-  //       } catch (e) {
-  //         PokemonsListError(
-  //           error: UnknownException('Unknown Error'),
-  //         );
-  //       }
-  //       break;
-  //   }
-  // }
 }
